@@ -1,11 +1,12 @@
+using API.Controllers;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddDbContext<FinanceDbContext>(options =>
+builder.Services.AddDbContext<GameDbContext>(options =>
 {
-    options.UseMySql(builder.Configuration.GetConnectionString("FinanceDB"), new MariaDbServerVersion(new Version(10, 9, 3)));
+    options.UseMySql(builder.Configuration.GetConnectionString("GameDatabase"), new MariaDbServerVersion(new Version(10, 9, 3)));
 });
 
 
